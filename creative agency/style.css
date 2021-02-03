@@ -1,0 +1,676 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button {
+  font-family: Poppins;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.heading {
+  align-self: center;
+  padding: 2rem 0;
+  font-size: 35px;
+  color: rgb(32, 28, 28);
+  text-transform: capitalize;
+  text-align: center;
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  width: 4rem;
+  height: 3px;
+  background-color: rgb(16, 173, 221);
+  bottom: 0;
+  margin-bottom: 1.5rem;
+  /*margin-left: 6%;*/
+}
+
+/* ------ Hero-section ----- */
+.hero-section {
+  background-image: url(./Images/hero-image.jpg);
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.hero-section::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(32, 30, 30);
+  opacity: 0.7;
+  position: absolute;
+}
+
+/*-----  Header  -----*/
+header {
+  /* padding-top: 4vh;*/
+  width: 90%;
+  min-height: 10vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 25px;
+  align-self: center;
+  color: whitesmoke;
+  z-index: 3;
+}
+header ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  list-style: none;
+}
+header ul li {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  text-transform: capitalize;
+  position: absolute;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+header ul li a::after {
+  content: "";
+  position: absolute;
+  height: 2.5px;
+  border-bottom: 2px solid rgb(16, 173, 221);
+  transition: 0.1s ease;
+  width: 35%;
+  margin: auto;
+  margin-top: 30%;
+  z-index: 3;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  transform: translateX(-20px);
+}
+header ul li:hover a {
+  font-size: 23px;
+  z-index: 3;
+  transition: 0.7s ease;
+}
+header ul li:hover a::after {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 0.5s ease-in-out;
+}
+
+/*---- Banner-section --- */
+.banner-section {
+  min-height: 70vh;
+  width: 55%;
+  margin: auto;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+.banner-section h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  color: whitesmoke;
+  z-index: 3;
+}
+.banner-section p {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 20px;
+  padding: 1rem 0;
+  line-height: 1.5;
+  z-index: 3;
+}
+.banner-section .cta-btns {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.banner-section .cta-btns button {
+  padding: 12px 30px;
+  background: none;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  z-index: 3;
+  cursor: pointer;
+}
+#cta-1 {
+  color: rgb(16, 173, 221);
+  background-color: rgb(238, 238, 238);
+}
+#cta-2,
+.contact-section form input[type="submit"] {
+  color: #fff;
+  background-color: rgb(16, 173, 221);
+}
+#cta-1 span,
+#cta-2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#cta-1 span::after,
+#cta-2 span::after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+#cta-1:hover span,
+#cta-2:hover span {
+  padding-right: 5px;
+}
+#cta-1:hover span::after,
+#cta-2:hover span::after {
+  opacity: 1;
+  right: -15px;
+}
+/*------welcome section -----------*/
+.welcome {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  background-color: #fff;
+}
+
+.welcome .cards,
+.pricing-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+}
+.welcome .cards > .card,
+.offer-section .offers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 249, 249, 0.219);
+  padding: 2rem 1rem;
+  border-radius: 5px;
+  border-left: 1px solid rgba(126, 122, 122, 0.075);
+  border-top: 1px solid rgba(126, 122, 122, 0.075);
+  box-shadow: 1px 2px rgba(58, 55, 55, 0.192);
+}
+.welcome .cards h3,
+.offer-section .offers h3,
+.team-section h3 {
+  color: rgba(32, 25, 25, 0.938);
+  text-align: center;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.welcome .cards > .card p,
+.offer-section .offers p {
+  padding: 1rem 0;
+  text-align: center;
+  color: rgb(90, 88, 88);
+  font-size: 20px;
+  line-height: 1.5;
+}
+.welcome .cards > .card p span {
+  color: black;
+}
+.welcome .cards > .card a,
+.blog-section .news-card a {
+  color: rgb(9, 149, 243);
+  text-decoration: none;
+  font-size: 18px;
+}
+.welcome .cards > .card a:hover,
+.blog-section .news-card a:hover {
+  text-decoration: underline;
+  transition: 0.5s ease-in-out;
+}
+
+/*------Featured_works section -----------*/
+.featured-works-section {
+  width: 100%;
+  background-color: rgba(235, 231, 231, 0.123);
+  padding-bottom: 4rem;
+}
+.featured_works,
+.offer-section,
+.contact-section {
+  width: 70%;
+  margin: auto;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+.featured_works h1,
+.offer-section h1,
+.contact-section h1,
+.contact-section form {
+  grid-column: 1/4;
+}
+.featured_works .img-container {
+  height: 300px;
+}
+.featured_works .img-container img{
+	object-fit:cover;
+	object-position: center center;
+}
+
+/*------ What_we_offer_section -----------*/
+.offer-section {
+  padding-bottom: 2rem;
+}
+/*------ Why_us section -----------*/
+.why-us {
+  background-color: rgba(235, 231, 231, 0.123);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 3rem 0 3rem;
+  margin-top: 2rem;
+}
+.why-us article {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  justify-items: center;
+}
+.why-us article .image {
+  align-self: start;
+  height: 100%;
+}
+
+.why-us article .description h1 {
+  padding-top: 0;
+  position: relative;
+  display: flex;
+}
+.why-us article .description h1::after {
+  content: "";
+  position: absolute;
+  width: 4rem;
+  height: 3px;
+  background-color: rgb(16, 173, 221);
+  bottom: 0;
+  margin-bottom: 1.5rem;
+}
+.why-us article .description ul {
+  padding: 1rem 2rem 2rem;
+  color: rgb(58, 54, 54);
+  font-size: 20px;
+  line-height: 1.5;
+}
+.why-us article .description p {
+  color: rgb(29, 22, 22);
+  font-size: 20px;
+  line-height: 1.5;
+}
+/*------Achievements  section -----------*/
+.achievements,
+.testimonials,
+.team-section,
+.blog-section {
+  width: 100%;
+  padding: 2rem 0;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 10% repeat(4, 1fr) 10%;
+  background-image: url(./Images/work_section.jpg);
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+}
+.achievements::after,
+.testimonials::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 66%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.achievements .achievement1 {
+  grid-column: 2/3;
+}
+.achievements .achievement,
+.testimonials .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(223, 223, 223);
+  font-size: 20px;
+  z-index: 3;
+}
+.achievements .achievement h1 {
+  color: white;
+}
+.achievements .achievement h1::after {
+  width: 2rem;
+}
+.achievements {
+  background-position: center;
+}
+/*------- pricing-section -------*/
+.pricing-section {
+  background-color: #fff;
+  width: 80%;
+  margin: auto;
+  justify-items: center;
+  padding: 2rem 0;
+}
+.pricing-section h1 {
+  grid-column: 1/4;
+}
+.pricing-section > .price-card {
+  width: 80%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  grid-gap: 1rem;
+  padding: 3rem 2rem;
+  border-radius: 5px;
+  border-left: 1px solid rgba(126, 122, 122, 0.075);
+  border-top: 1px solid rgba(126, 122, 122, 0.075);
+  box-shadow: 1px 2px rgba(58, 55, 55, 0.192);
+  filter: drop-shadow(0px 5px 3px rgba(58, 55, 55, 0.178));
+  z-index: 2;
+}
+.pricing-section > .price-card .price-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(26, 14, 14);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(16, 173, 221, 0.247);
+  padding: 1rem;
+  margin: 1rem;
+}
+.pricing-section > .price-card .price-tag h3 {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: rgb(68, 17, 17);
+}
+.pricing-section > .price-card .price-tag h5 {
+  padding: 5px 0;
+  color: rgb(90, 85, 85);
+}
+.pricing-section > .price-card .price-tag h4 {
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: rgb(65, 60, 60);
+}
+.pricing-section > .price-card h2 {
+  color: rgb(126, 13, 13);
+}
+.pricing-section > .price-card p {
+  color: #333;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.1ex;
+}
+.pricing-section input[type="button"] {
+  color: rgb(16, 173, 221);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 1px solid rgb(16, 173, 221);
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 10px 12px;
+}
+.pricing-section .price-card:nth-of-type(2) {
+  z-index: 5;
+  transform: translateY(-10px);
+}
+.pricing-section .price-card:nth-of-type(2) input[type="button"] {
+  background-color: rgba(39, 151, 185, 0.966);
+  color: white;
+}
+.pricing-section input[type="button"]:hover {
+  color: white;
+  background-color: rgba(39, 151, 185, 0.966);
+  transition: 0.2s ease;
+}
+.pricing-section .price-card:nth-of-type(2) input[type="button"]:hover {
+  background-color: rgb(5, 179, 231);
+}
+
+/*------ Testimonials section -----------*/
+.testimonials {
+  grid-template-columns: 10% repeat(2, 1fr) 10%;
+  grid-gap: 2rem;
+  padding: 2rem 0;
+  align-items: center;
+  justify-items: center;
+}
+.testimonials .card {
+  z-index: 3;
+}
+.testimonials .card > p,
+.blog-section .news-card p {
+  padding-top: 1rem;
+  font-size: 18px;
+}
+.testimonials .card1 {
+  grid-column: 2/3;
+}
+.testimonials .card .icon {
+  align-self: start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.testimonials .card .icon h3 {
+  align-self: center;
+}
+.testimonials .card .icon .img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  grid-row: 1/3;
+}
+.testimonials img,
+.team-section > div img {
+  object-fit: cover;
+  object-position: top;
+}
+.testimonials .card .icon h5 {
+  grid-column: 2/3;
+  color: rgb(16, 173, 221);
+}
+
+/*------ Team section -----------*/
+.team-section {
+  height: 85vh;
+}
+.team-section,
+.blog-section {
+  background: none;
+  grid-template-columns: 10% repeat(3, 1fr) 10%;
+  grid-gap: 2rem;
+}
+.team-section h1,
+.blog-section h1 {
+  grid-column: 1/6;
+}
+.team-section > div {
+  height: 60%;
+}
+.team-section > div,
+.blog-section > div,
+.contact-section > div {
+  display: flex;
+  flex-direction: column;
+}
+.team-section > div:nth-of-type(1),
+.blog-section > div:nth-of-type(1) {
+  grid-column: 2/3;
+}
+.team-section h3 {
+  padding-top: 1rem;
+}
+.team-section h5 {
+  padding-top: 0.3rem;
+  color: rgb(70, 68, 68);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/*------ Blog section -----------*/
+.blog-section {
+  background: none;
+  margin-top: 0px;
+  padding-bottom: 2rem;
+  background-color: rgba(235, 231, 231, 0.123);
+}
+.blog-section .author {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0.5rem 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+.blog-section .news-card h3,
+.contact-section > div h3 {
+  font-size: 23px;
+  color: rgba(32, 25, 25, 0.938);
+}
+.blog-section .news-card a {
+  padding-top: 1rem;
+}
+.blog-section .news-card {
+  background-color: rgba(255, 249, 249, 0.219);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/*------ Contact us section -----------*/
+.contact-section {
+  justify-items: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(235, 231, 231, 0.123);
+}
+.contact-section > div {
+  align-items: center;
+  justify-content: center;
+}
+.contact-section h3 {
+  padding: 1rem 0;
+}
+.contact-section form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  width: 60%;
+  margin: auto;
+  padding: 2rem 0px;
+}
+.contact-section textarea {
+  padding-top: 2rem;
+  width: 100%;
+}
+.contact-section form input,
+.contact-section textarea {
+  font-size: 18px;
+  padding: 10px 1rem;
+  border: none;
+  border: 1px solid rgb(16, 173, 221);
+  background-color: rgb(255, 255, 255);
+}
+.contact-section form input {
+  height: 2.5rem;
+}
+.contact-section form input:nth-of-type(3),
+.contact-section textarea {
+  grid-column: 1/3;
+}
+.contact-section form input[type="submit"] {
+  grid-column: 1/3;
+  border: none;
+  width: 30%;
+  margin: auto;
+}
+/*------ Footer section -----------*/
+footer {
+  margin-top: 2rem;
+  height: 15vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0px;
+}
+footer .copyright {
+  width: 50%;
+  margin: auto;
+  color: rgb(107, 105, 105);
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem 0;
+}
+footer .copyright span {
+  color: rgb(16, 173, 221);
+}
